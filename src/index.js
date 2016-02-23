@@ -1,5 +1,3 @@
-import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 import routerState from './router-state-reducer';
 import stateGo from './state-go';
 import stateReload from './state-reload';
@@ -9,9 +7,11 @@ import routerMiddleware from './router-middleware';
 import uiRouterListener from './router-listener';
 import stateChangeActions from './state-change-actions';
 
+let angular = window.angular;
+
 export default angular
   .module('ng-ui-router-middleware', [
-    uiRouter,
+    'ui.router'
   ])
   .provider('ngUiStateChangeActions', stateChangeActions)
   .factory('ngUiRouterMiddleware', routerMiddleware)
